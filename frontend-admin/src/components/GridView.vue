@@ -136,12 +136,7 @@ const pageSizes = computed(() => {
   return [...new Set([...base, n].sort((a, b) => a - b))]
 })
 
-const displayData = computed(() => {
-  if (!props.paging) return props.data
-  const start = (currentPage.value - 1) * pageSize.value
-  const end = start + pageSize.value
-  return props.data.slice(start, end)
-})
+const displayData = computed(() => props.data)
 
 function getColumnLabel(columnName: string) {
   const info = props.columnInfos.find(c => c.ColumnName === columnName)
