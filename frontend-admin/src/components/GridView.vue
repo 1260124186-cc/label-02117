@@ -137,10 +137,7 @@ const pageSizes = computed(() => {
 })
 
 const displayData = computed(() => {
-  if (!props.paging) return props.data
-  const start = (currentPage.value - 1) * pageSize.value
-  const end = start + pageSize.value
-  return props.data.slice(start, end)
+  return props.data
 })
 
 function getColumnLabel(columnName: string) {
